@@ -3,6 +3,12 @@ Devops Friendly App
 
 A complimentary code example for the talk: Building Devops Friendly Apps in Python.
 
+Goal
+---
+
+Reduce friction between the development team and the other technical operations
+teams such as the system administrators and the tecnical support engineers.
+
 Dependencies
 ---
 
@@ -21,7 +27,8 @@ $ virtualenv --distribute myenv  # Creates an environment called 'env'
 $ source ./myenv/bin/activate    # Activates the environment called 'env'
 (env) $ pip freeze               # Show return no dependencies
 ```
-https://virtualenv.pypa.io/en/latest/
+
+[Virtualenv Docs](https://virtualenv.pypa.io/en/latest/)
 
 
 Now that we have virtualenv ready and a codebase with a declared set of
@@ -77,3 +84,25 @@ See `src/run.sh`. This is how we run the application.
 
 In the example `src/run.sh`, we can see that we're running gunicorn on the
 environment-set `HOST` and `PORT`.
+
+Logging
+---
+
+See `src/logconfig.py` on how it was configured and `src/server.py` on how
+it was used.
+
+* Stream to stdout.
+* Allow sysad to manage the logs from stdout (eg. script.py > logfile.log,
+  docker logs mycontainer, etc).
+* Having different ways to manage logs (to syslog, to file, log rotation, etc)
+  makes it painful for sysads to manage logs.
+* Don't use print!
+* Use the appropriate logging levels (INFO, DEBUG, etc)
+
+Python has a great documentation on how to use and configure the logging system.
+[Python Logging](https://docs.python.org/2/library/logging.html).
+
+Although they are a bunch of other ways to setup logging, we'll be using the
+most basic method in our example (logging.basicConfig).
+
+This is one of the areas where convention shines over configuration.
