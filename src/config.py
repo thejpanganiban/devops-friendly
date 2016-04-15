@@ -1,4 +1,5 @@
 import os
 
 
-SERVICE_URL = os.environ.get('SERVICE_URL', 'https://google.com')
+DATABASE_URL = os.environ.get('DATABASE_URL', 'mysql://username:password@localhost:3306/mydb')
+CACHE_URL = os.environ.get('CACHE_URL', 'redis://localhost:6709')
