@@ -65,3 +65,15 @@ To override the configuration defaults:
 henever we need a new configuration (eg. app to point to a different db),
 we'd need to declare a new config file (ie. different-db.yml) when we can
 explicitly declare this in the command (ie. CONFIG=VALUE python script.py)
+
+Port Binding
+---
+
+See `src/run.sh`. This is how we run the application.
+
+* Run applications with a declared port (eg. http://localhost:5000)
+* No distinction between local and third-party services.
+* Avoid the use of unix sockets (Dependency injection is ugly).
+
+In the example `src/run.sh`, we can see that we're running gunicorn on the
+environment-set `HOST` and `PORT`.

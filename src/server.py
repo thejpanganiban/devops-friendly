@@ -10,4 +10,6 @@ def page_index():
     return jsonify({
         'DATABASE_URL': config.DATABASE_URL,
         'CACHE_URL': config.CACHE_URL,
+        'HOST': config.HOST,
+        'PORT': config.PORT,
     })
