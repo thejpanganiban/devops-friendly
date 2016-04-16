@@ -28,7 +28,7 @@ $ source ./myenv/bin/activate    # Activates the environment called 'env'
 (env) $ pip freeze               # Show return no dependencies
 ```
 
-[Virtualenv Docs](https://virtualenv.pypa.io/en/latest/)
+Read more about [Virtualenv](https://virtualenv.pypa.io/en/latest/)
 
 
 Now that we have virtualenv ready and a codebase with a declared set of
@@ -100,7 +100,7 @@ it was used.
 * Use the appropriate logging levels (INFO, DEBUG, etc)
 
 Python has a great documentation on how to use and configure the logging system.
-[Python Logging](https://docs.python.org/2/library/logging.html).
+Read more about [Python Logging](https://docs.python.org/2/library/logging.html).
 
 Although they are a bunch of other ways to setup logging, we'll be using the
 most basic method in our example (logging.basicConfig).
