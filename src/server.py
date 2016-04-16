@@ -16,6 +16,9 @@ logger = logging.getLogger(__name__)
 
 @app.route('/')
 def page_index():
+    # We're demonstrating two log levels here. Info is
+    # turned on by default while debug is only available
+    # when we have LOGLEVEL set to DEBUG.
     logger.info('got a request')
     logger.debug('requesting system info')
     system_info = {
